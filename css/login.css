@@ -1,0 +1,1075 @@
+/*====================================================
+                NAEEM ACADEMY
+            STUDENT PORTAL LOGIN
+=====================================================*/
+
+/*====================================================
+                        RESET
+=====================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/*====================================================
+                    CSS VARIABLES
+=====================================================*/
+
+:root{
+
+    --primary:#0D6EFD;
+    --secondary:#4F9DFF;
+
+    --white:#FFFFFF;
+    --light:#F5F7FA;
+    --dark:#1E293B;
+    --text:#333333;
+
+    --success:#22C55E;
+    --warning:#FACC15;
+    --danger:#EF4444;
+
+    --radius:20px;
+    --shadow:0 15px 35px rgba(0,0,0,.35);
+    --transition:.35s ease;
+
+}
+
+/*====================================================
+                    BACKGROUND
+=====================================================*/
+
+.background{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.45)
+    ),
+    url("../images/background.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+/*====================================================
+                    LOGIN CARD
+=====================================================*/
+
+.login-card{
+
+    width:100%;
+    max-width:450px;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    animation:fadeIn .8s ease;
+
+}
+
+/*====================================================
+                        LOGO
+=====================================================*/
+
+.logo-section{
+
+    text-align:center;
+    margin-bottom:35px;
+
+}
+
+.logo-section img{
+
+    width:120px;
+    height:120px;
+
+    margin:auto;
+    margin-bottom:18px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:5px solid var(--secondary);
+
+    box-shadow:0 10px 30px rgba(79,157,255,.45);
+
+}
+
+.logo-section h1{
+
+    color:var(--white);
+    font-size:30px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.logo-section p{
+
+    margin-top:6px;
+
+    color:#ECECEC;
+
+    font-size:18px;
+
+}
+
+.logo-section span{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#F5F5F5;
+
+    font-size:14px;
+
+    letter-spacing:.4px;
+
+}
+
+/*====================================================
+                INPUT BOXES
+=====================================================*/
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:22px;
+
+}
+
+.input-box i:first-child{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--secondary);
+
+    font-size:18px;
+
+    z-index:2;
+
+}
+
+/*====================================================
+            INPUT & SELECT
+=====================================================*/
+
+.input-box input,
+.input-box select{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.94);
+
+    color:var(--text);
+
+    font-size:16px;
+
+    padding-left:52px;
+
+    padding-right:52px;
+
+    transition:var(--transition);
+
+}
+
+.input-box input::placeholder{
+
+    color:#666;
+
+}
+
+/*====================================================
+            INPUT EFFECTS
+=====================================================*/
+
+.input-box input:hover,
+.input-box select:hover{
+
+    background:#FFFFFF;
+
+}
+
+.input-box input:focus,
+.input-box select:focus{
+
+    background:#FFFFFF;
+
+    box-shadow:0 0 16px rgba(79,157,255,.60);
+
+}
+
+/*====================================================
+            CLASS DROPDOWN
+=====================================================*/
+
+.input-box select{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+}
+
+.select-box::after{
+
+    content:"▼";
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:11px;
+
+    color:#666;
+
+    pointer-events:none;
+
+}
+
+.input-box select option{
+
+    background:#FFFFFF;
+
+    color:#222;
+
+}
+
+/*====================================================
+            PASSWORD BUTTON
+=====================================================*/
+
+.password-box #togglePassword{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#666;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    z-index:2;
+
+}
+
+.password-box #togglePassword:hover{
+
+    color:var(--primary);
+
+}
+
+/*====================================================
+                LOGIN BUTTON
+=====================================================*/
+
+.login-btn{
+
+    width:100%;
+
+    height:56px;
+
+    margin-top:8px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:var(--white);
+
+    font-size:18px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(13,110,253,.40);
+
+}
+
+.login-btn:active{
+
+    transform:scale(.98);
+
+}
+
+
+/*====================================================
+                    NOTICE
+=====================================================*/
+
+.notice{
+
+    margin-top:28px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    text-align:center;
+
+    color:var(--white);
+
+    line-height:24px;
+
+    font-size:14px;
+
+}
+
+.notice i{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:20px;
+
+    color:#FFD54F;
+
+}
+
+.notice strong{
+
+    color:#FFD54F;
+
+}
+
+/*====================================================
+                    FOOTER
+=====================================================*/
+
+.footer{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.90);
+
+}
+
+.footer p{
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.footer span{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:13px;
+
+    opacity:.85;
+
+}
+
+
+/*====================================================
+                LOADING SCREEN
+=====================================================*/
+
+#loader{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #1D4ED8
+    );
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+/*====================================================
+                LOADER CONTENT
+=====================================================*/
+
+.loader-content{
+
+    text-align:center;
+
+    color:var(--white);
+
+    animation:fadeLoader .5s ease;
+
+}
+
+.loader-content img{
+
+    width:120px;
+    height:120px;
+
+    margin:auto;
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    border:5px solid var(--white);
+
+    object-fit:cover;
+
+    animation:logoFloat 2s ease-in-out infinite;
+
+}
+
+.loader-content h1{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.loader-content p{
+
+    font-size:18px;
+
+    opacity:.95;
+
+    margin-bottom:30px;
+
+}
+
+.loader-content span{
+
+    display:block;
+
+    margin-top:20px;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+}
+
+/*====================================================
+                LOADING BAR
+=====================================================*/
+
+.loading-bar{
+
+    width:320px;
+
+    height:10px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.loading-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:var(--white);
+
+}
+
+.loading{
+
+    animation:loadingBar 2s linear forwards;
+
+}
+
+/*====================================================
+                CUSTOM SCROLLBAR
+=====================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ECECEC;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary);
+
+}
+
+/*====================================================
+                ANIMATIONS
+=====================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeLoader{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes loadingBar{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*====================================================
+                RESPONSIVE
+=====================================================*/
+
+/*======================
+        Laptop
+=======================*/
+
+@media (max-width:1200px){
+
+    .login-card{
+
+        max-width:430px;
+
+    }
+
+}
+
+/*======================
+        Tablet
+=======================*/
+
+@media (max-width:992px){
+
+    .background{
+
+        padding:30px 20px;
+
+    }
+
+    .login-card{
+
+        max-width:420px;
+
+        padding:35px;
+
+    }
+
+    .logo-section img{
+
+        width:105px;
+        height:105px;
+
+    }
+
+    .logo-section h1{
+
+        font-size:28px;
+
+    }
+
+}
+
+/*======================
+        Mobile
+=======================*/
+
+@media (max-width:768px){
+
+    .background{
+
+        padding:20px;
+
+    }
+
+    .login-card{
+
+        width:420px;
+
+        max-width:100%;
+
+        padding:30px;
+
+    }
+
+    .logo-section{
+
+        margin-bottom:30px;
+
+    }
+
+    .logo-section img{
+
+        width:95px;
+        height:95px;
+
+    }
+
+    .logo-section h1{
+
+        font-size:26px;
+
+    }
+
+    .logo-section p{
+
+        font-size:17px;
+
+    }
+
+    .logo-section span{
+
+        font-size:13px;
+
+    }
+
+    .input-box{
+
+        margin-bottom:18px;
+
+    }
+
+    .input-box input,
+    .input-box select{
+
+        height:52px;
+
+        font-size:15px;
+
+    }
+
+    .login-btn{
+
+        height:52px;
+
+        font-size:17px;
+
+    }
+
+}
+
+/*======================
+     Small Phones
+=======================*/
+
+@media (max-width:480px){
+
+    .background{
+
+        padding:15px;
+
+    }
+
+    .login-card{
+
+        width:100%;
+
+        padding:25px 20px;
+
+        border-radius:18px;
+
+    }
+
+    .logo-section img{
+
+        width:80px;
+
+        height:80px;
+
+    }
+
+    .logo-section h1{
+
+        font-size:23px;
+
+    }
+
+    .logo-section p{
+
+        font-size:15px;
+
+    }
+
+    .logo-section span{
+
+        font-size:12px;
+
+    }
+
+    .loading-bar{
+
+        width:220px;
+
+    }
+
+    .loader-content h1{
+
+        font-size:28px;
+
+    }
+
+    .loader-content p{
+
+        font-size:16px;
+
+    }
+
+}
+
+/*======================
+    Short Displays
+=======================*/
+
+@media (max-height:700px){
+
+    .background{
+
+        padding:20px;
+
+    }
+
+    .login-card{
+
+        padding:28px;
+
+    }
+
+    .logo-section{
+
+        margin-bottom:22px;
+
+    }
+
+    .logo-section img{
+
+        width:85px;
+
+        height:85px;
+
+    }
+
+}
+
+
+/*====================================================
+                FINAL POLISH
+=====================================================*/
+
+/*======================
+    Text Selection
+=======================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/*======================
+    Smooth Transitions
+=======================*/
+
+input,
+select,
+button,
+a,
+img{
+
+    transition:var(--transition);
+
+}
+
+/*======================
+    Remove Blue Highlight
+=======================*/
+
+button,
+input,
+select,
+a{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/*======================
+    Focus Visibility
+=======================*/
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+
+    outline:3px solid rgba(79,157,255,.35);
+
+    outline-offset:2px;
+
+}
+
+/*======================
+        Logo Hover
+=======================*/
+
+.logo-section img:hover{
+
+    transform:scale(1.05) rotate(2deg);
+
+}
+
+/*======================
+    Login Card Hover
+=======================*/
+
+.login-card:hover{
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.40);
+
+}
+
+/*======================
+    Button Icon
+=======================*/
+
+.login-btn i{
+
+    transition:transform .3s ease;
+
+}
+
+.login-btn:hover i{
+
+    transform:translateX(4px);
+
+}
+
+/*======================
+        Disabled
+=======================*/
+
+.login-btn:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+/*======================
+        Loader
+=======================*/
+
+#loader.show{
+
+    display:flex;
+
+}
+
+/*======================
+    Prevent Image Drag
+=======================*/
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/*======================
+    Prevent Text Selection
+=======================*/
+
+.logo-section,
+.footer{
+
+    user-select:none;
+
+}
