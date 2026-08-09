@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Naeem Academy | Student Profile</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/profile.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.jpg">
+
+</head>
+
+<body>
+
+    <!--=========================================
+                SIDEBAR
+    ==========================================-->
+
+    <aside class="sidebar">
+
+        <!-- Academy Logo -->
+
+        <div class="sidebar-logo">
+
+            <img src="images/logo.jpg" alt="Naeem Academy">
+
+            <h2>Naeem Academy</h2>
+
+            <p>Student Portal</p>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="attendance.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>Attendance</span>
+
+            </a>
+
+            <a href="fees.html">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>Fees</span>
+
+            </a>
+
+            <div class="menu-group">
+
+    <button class="menu-parent" id="examMenu">
+
+        <span>
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            Examination
+
+        </span>
+
+        <i class="fa-solid fa-chevron-down arrow"></i>
+
+    </button>
+
+    <div class="submenu" id="examSubmenu">
+
+        <a href="class-test.html">
+
+            <i class="fa-solid fa-file-signature"></i>
+
+            <span>Class Test Record</span>
+
+        </a>
+
+        <a href="test-session.html">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <span>Test Session Record</span>
+
+        </a>
+
+    </div>
+
+</div>
+
+            <a href="profile.html" class="active">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!--=========================================
+                MAIN CONTENT
+    ==========================================-->
+
+    <main class="main-content">
+                <!--=========================================
+                    TOP NAVBAR
+        ==========================================-->
+
+        <header class="topbar">
+
+            <!-- Mobile Menu Button -->
+
+            <button class="menu-toggle" id="menuToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+            <!-- Page Title -->
+
+            <div class="page-title">
+
+                <h1>Profile</h1>
+
+                <p>View your profile information</p>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="topbar-right">
+
+                <!-- Notice Button -->
+
+                <button class="notice-btn" id="noticeBtn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="notice-dot" id="noticeDot"></span>
+
+                </button>
+
+                <!-- Student -->
+
+                <div class="student-info">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <div class="student-details">
+
+                        <h4 id="studentName">
+                            Student Name
+                        </h4>
+
+                        <span id="studentClass">
+                            9th - Computer
+                        </span>
+
+                    </div>
+
+                    <button id="logoutBtn" class="logout-btn">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!--=========================================
+                    PROFILE SECTION
+        ==========================================-->
+
+
+        <section class="profile-section">
+
+    <!-- Profile Header -->
+
+    <div class="profile-header">
+
+        <i class="fa-solid fa-circle-user"></i>
+
+        <h2 id="profileName">
+
+            Student Name
+
+        </h2>
+
+        <p>
+
+            Student Profile
+
+        </p>
+
+    </div>
+
+    <!-- Profile Information -->
+
+    <div class="profile-info">
+
+        <div class="profile-box">
+
+            <h3>Roll Number</h3>
+
+            <h2 id="profileRollNo">
+
+                -
+
+            </h2>
+
+        </div>
+
+        <div class="profile-box">
+
+            <h3>Class</h3>
+
+            <h2 id="profileClass">
+
+                -
+
+            </h2>
+
+        </div>
+
+        <div class="profile-box">
+
+            <h3>Group</h3>
+
+            <h2 id="profileGroup">
+
+                -
+
+            </h2>
+
+        </div>
+
+        <div class="profile-box">
+
+            <h3>Student Name</h3>
+
+            <h2 id="profileStudentName">
+
+                -
+
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+        <!--=========================================
+                    FOOTER
+        ==========================================-->
+
+        <footer class="footer">
+
+            <p>
+
+                © 2026 Naeem Academy Student Portal
+
+            </p>
+
+        </footer>
+
+    </main>
+
+
+
+    <!--=========================================
+                NOTICE OVERLAY
+    ==========================================-->
+
+    <div class="notice-overlay" id="noticeOverlay"></div>
+
+
+
+    <!--=========================================
+                NOTICE POPUP
+    ==========================================-->
+
+    <div class="notice-popup" id="noticePopup">
+
+        <!-- Popup Header -->
+
+        <div class="notice-header">
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            <h2 id="noticeTitle">
+
+                Important Notice
+
+            </h2>
+
+        </div>
+
+
+        <!-- Notice Date -->
+
+        <div class="notice-date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span id="noticeDate">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+
+        <!-- Notice Message -->
+
+        <div class="notice-message">
+
+            <p id="noticeMessage">
+
+                Loading latest notice...
+
+            </p>
+
+        </div>
+
+
+        <!-- Popup Button -->
+
+        <div class="notice-footer">
+
+            <button id="closeNotice">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    
+
+    <!--=========================================
+                JAVASCRIPT
+    ==========================================-->
+
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

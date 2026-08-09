@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Naeem Academy | Student Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.jpg">
+
+</head>
+
+<body>
+
+    <!--=========================================
+                SIDEBAR
+    ==========================================-->
+
+    <aside class="sidebar">
+
+        <!-- Academy Logo -->
+
+        <div class="sidebar-logo">
+
+            <img src="images/logo.jpg" alt="Naeem Academy">
+
+            <h2>Naeem Academy</h2>
+
+            <p>Student Portal</p>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="active">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="attendance.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>Attendance</span>
+
+            </a>
+
+            <a href="fees.html">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>Fees</span>
+
+            </a>
+
+            <div class="menu-group">
+
+    <button class="menu-parent" id="examMenu">
+
+        <span>
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            Examination
+
+        </span>
+
+        <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </button>
+
+        <div class="submenu" id="examSubmenu">
+
+            <a href="class-test.html">
+
+                <i class="fa-solid fa-file-signature"></i>
+
+                <span>Class Test Record</span>
+
+            </a>
+
+            <a href="test-session.html">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span>Test Session Record</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+            <a href="profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!--=========================================
+                MAIN CONTENT
+    ==========================================-->
+
+    <main class="main-content">
+                <!--=========================================
+                    TOP NAVBAR
+        ==========================================-->
+
+        <header class="topbar">
+
+            <!-- Mobile Menu Button -->
+
+            <button class="menu-toggle" id="menuToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+            <!-- Page Title -->
+
+            <div class="page-title">
+
+                <h1>Dashboard</h1>
+
+                <p>Welcome to Naeem Academy Student Portal</p>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="topbar-right">
+
+                <!-- Notice Button -->
+
+                <button class="notice-btn" id="noticeBtn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="notice-dot" id="noticeDot"></span>
+
+                </button>
+
+                <!-- Student -->
+
+                <div class="student-info">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <div class="student-details">
+
+                        <h4 id="studentName">
+                            Student Name
+                        </h4>
+
+                        <span id="studentClass">
+                            9th - Computer
+                        </span>
+
+                    </div>
+
+                    <button id="logoutBtn" class="logout-btn">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!--=========================================
+                WELCOME SECTION
+        ==========================================-->
+
+        <section class="welcome-section">
+
+            <div class="welcome-text">
+
+                <h2>
+
+                    <span id="welcomeName">
+
+                        Good Morning, Student
+
+                    </span>
+
+                    👋
+
+                </h2>
+
+                <p>
+
+                Stay updated with your attendance, fee status,
+
+                latest examination performance, academy notices,
+
+                and important announcements.
+
+                </p>
+
+            </div>
+
+        </section>
+
+                <!--=========================================
+                    SUMMARY CARDS
+        ==========================================-->
+
+        <section class="dashboard-cards">
+
+            <!-- Attendance Card -->
+
+            <div class="card">
+
+                <div class="card-icon attendance">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Attendance</h3>
+
+                    <h2 id="attendancePercentage">
+
+                        0%
+
+                    </h2>
+
+                    <p>Overall Attendance</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Fee Card -->
+
+            <div class="card">
+
+                <div class="card-icon fees">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Fee Status</h3>
+
+                    <h2 id="feeStatus">
+
+                        Loading...
+
+                    </h2>
+
+                    <p>Current Month</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Latest Test Card -->
+
+            <div class="card">
+
+                <div class="card-icon tests">
+
+                    <i class="fa-solid fa-clipboard-list"></i>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Latest Examination</h3>
+
+                    <h2 id="latestExamAverage">
+
+                        --
+
+                    </h2>
+
+                    <p id="latestExamName">
+
+                        No Examination Available
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+<!--=========================================
+            DASHBOARD CONTENT
+==========================================-->
+
+<section class="dashboard-content">
+
+    <!-- Latest Class Test -->
+
+    <div class="dashboard-box">
+
+        <div class="box-header">
+
+            <h2>
+
+                <i class="fa-solid fa-clipboard-list"></i>
+
+                Latest Class Test
+
+            </h2>
+
+        </div>
+
+        <div class="exam-summary">
+
+            <h3 id="latestClassTestName">
+
+                Test 5
+
+            </h3>
+
+            <p>
+
+                Overall Average:
+
+                <strong id="latestClassAverage">
+
+                    0%
+
+                </strong>
+
+            </p>
+
+            <a href="class-test.html" class="view-btn">
+
+                View Details
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Latest Test Session -->
+
+    <div class="dashboard-box">
+
+        <div class="box-header">
+
+            <h2>
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                Latest Test Session
+
+            </h2>
+
+        </div>
+
+        <div class="exam-summary">
+
+            <h3 id="latestSessionName">
+
+                Session 2
+
+            </h3>
+
+            <p>
+
+                Overall Average:
+
+                <strong id="latestSessionAverage">
+
+                    0%
+
+                </strong>
+
+            </p>
+
+            <a href="test-session.html" class="view-btn">
+
+                View Details
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+                <!--=========================================
+                    FOOTER
+        ==========================================-->
+
+        <footer class="footer">
+
+            <p>
+
+                © 2026 Naeem Academy Student Portal
+
+            </p>
+
+        </footer>
+
+    </main>
+
+
+
+    <!--=========================================
+                NOTICE OVERLAY
+    ==========================================-->
+
+    <div class="notice-overlay" id="noticeOverlay"></div>
+
+
+
+    <!--=========================================
+                NOTICE POPUP
+    ==========================================-->
+
+    <div class="notice-popup" id="noticePopup">
+
+        <!-- Popup Header -->
+
+        <div class="notice-header">
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            <h2 id="noticeTitle">
+
+                Important Notice
+
+            </h2>
+
+        </div>
+
+
+        <!-- Notice Date -->
+
+        <div class="notice-date">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span id="noticeDate">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+
+        <!-- Notice Message -->
+
+        <div class="notice-message">
+
+            <p id="noticeMessage">
+
+                Loading latest notice...
+
+            </p>
+
+        </div>
+
+
+        <!-- Popup Button -->
+
+        <div class="notice-footer">
+
+            <button id="closeNotice">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!--=========================================
+                JAVASCRIPT
+    ==========================================-->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

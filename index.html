@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Naeem Academy | Student Portal</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/login.css">
+
+    <!-- Favicon -->
+
+    <link rel="icon"
+          href="images/logo.jpg">
+
+</head>
+
+<body>
+
+    <!--==========================
+            BACKGROUND
+    ==========================-->
+
+    <div class="background">
+
+        <!--==========================
+            LOGIN CARD
+        ==========================-->
+
+        <div class="login-card">
+
+            <!--==========================
+                LOGO
+            ==========================-->
+
+            <div class="logo-section">
+
+                <img src="images/logo.jpg"
+                     alt="Naeem Academy Logo">
+
+                <h1>Naeem Academy</h1>
+
+                <p>Student Portal</p>
+
+                <span>
+                    Welcome Students & Parents
+                </span>
+
+            </div>
+
+                        <!--==========================
+                LOGIN FORM
+            ==========================-->
+
+            <form id="loginForm">
+
+                <!--==========================
+                    CLASS
+                ==========================-->
+
+                <div class="input-box select-box">
+
+                    <i class="fa-solid fa-school"></i>
+
+                    <select id="studentClass" required>
+
+                        <option value="">Select Class</option>
+                        <option value="9th">9th Class</option>
+                        <option value="10th">10th Class</option>
+
+
+                    </select>
+
+                </div>
+
+                <!--==========================
+                    ROLL NUMBER
+                ==========================-->
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    <input
+                        type="text"
+                        id="rollNo"
+                        name="rollNo"
+                        placeholder="Enter Roll Number"
+                        autocomplete="off"
+                        required>
+
+                </div>
+
+                <!--==========================
+                    PASSWORD
+                ==========================-->
+
+                <div class="input-box password-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        autocomplete="current-password"
+                        required>
+
+                    <span id="togglePassword">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </span>
+
+                </div>
+
+
+                <!--==========================
+                    LOGIN BUTTON
+                ==========================-->
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+
+            </form>
+
+
+                        <!--==========================
+                    NOTICE
+            ==========================-->
+
+            <div class="notice">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+
+                    <strong>Notice:</strong><br>
+
+                    Attendance, fee status and examination records are updated regularly by the academy.
+
+                </p>
+
+            </div>
+
+            <!--==========================
+                    FOOTER
+            ==========================-->
+
+            <div class="footer">
+
+                <p>
+
+                    © 2026 Naeem Academy
+
+                </p>
+
+                <span>
+
+                    All Rights Reserved
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--==========================
+            LOADING SCREEN
+    ==========================-->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <img src="images/logo.jpg"
+                 alt="Naeem Academy Logo">
+
+            <h1>Naeem Academy</h1>
+
+            <p>Student Portal</p>
+
+            <div class="loading-bar">
+
+                <div class="loading-fill"></div>
+
+            </div>
+
+            <span>
+
+                Verifying your account...
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!--==========================
+            JAVASCRIPT
+    ==========================-->
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
