@@ -2678,10 +2678,10 @@
                 {
                     "test": "Ch. 06 (Long Questions)",
                     "date": "2026-11-17",
-                    "obtained": null,
+                    "obtained": 9,
                     "total": 10,
                     "grade": "",
-                    "absent": true
+                    "absent": false
                 }
             ],
             "English": [
